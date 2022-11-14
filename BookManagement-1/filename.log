@@ -1,0 +1,880 @@
+2022-11-13 07:48:01.100  INFO 23480 --- [main] c.e.demo.BookManagement1Application      : Starting BookManagement1Application using Java 17.0.1 on LAPTOP-KQU7CN9I with PID 23480 (C:\Users\Chinmay\eclipse-workspace\BookManagement-1\target\classes started by Chinmay in C:\Users\Chinmay\eclipse-workspace\BookManagement-1)
+2022-11-13 07:48:01.105  INFO 23480 --- [main] c.e.demo.BookManagement1Application      : No active profile set, falling back to 1 default profile: "default"
+2022-11-13 07:48:01.884  INFO 23480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-13 07:48:01.950  INFO 23480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 2 MongoDB repository interfaces.
+2022-11-13 07:48:02.500  INFO 23480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-13 07:48:02.513  INFO 23480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-13 07:48:02.513  INFO 23480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-13 07:48:02.664  INFO 23480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-13 07:48:02.665  INFO 23480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1500 ms
+2022-11-13 07:48:02.990  INFO 23480 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.1+12"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@5e13f156]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.r0sdgoq.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-izkpdz-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-11-13 07:48:03.137  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:48:03.166  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:48:03.168  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:48:03.805  INFO 23480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-13 07:48:03.817  INFO 23480 --- [main] c.e.demo.BookManagement1Application      : Started BookManagement1Application in 3.222 seconds (JVM running for 5.422)
+2022-11-13 07:48:04.909  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:48:04.946  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:48:04.954  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:48:16.031  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:48:49.699  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:49:00.955  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:49:23.221  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:49:34.022  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:49:45.012  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:49:45.243  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:49:45.359  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:49:56.339  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:49:56.395  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:49:56.512  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:50:18.545  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:50:18.866  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:50:29.936  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:50:41.511  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:50:52.291  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:51:14.399  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:51:14.796  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:51:26.036  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:51:37.312  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:52:10.399  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:52:21.786  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:52:32.829  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Prematurely reached end of stream
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:112) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 07:52:33.164  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:702) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:337) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:101) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:45) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:131) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:73) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:182) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: java.net.SocketException: Socket is closed
+	at java.base/java.net.Socket.setSoTimeout(Socket.java:1218) ~[na:na]
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.setSoTimeout(BaseSSLSocketImpl.java:638) ~[na:na]
+	at java.base/sun.security.ssl.SSLSocketImpl.setSoTimeout(SSLSocketImpl.java:74) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:137) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:na]
+	... 10 common frames omitted
+
+2022-11-13 07:52:42.535  INFO 23480 --- [cluster-rtt-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:151, serverValue:459854}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 07:52:42.865  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:152, serverValue:459854}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 07:52:42.866  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=86032300, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f3b8cf81263c7193d95b, counter=3}, lastWriteDate=Sun Nov 13 07:52:57 IST 2022, lastUpdateTimeNanos=686234327604800}
+2022-11-13 07:52:42.969  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:153, serverValue:495418}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:52:42.970  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=93283900, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000dd, setVersion=5, topologyVersion=TopologyVersion{processId=6360f28de512af9004dd2eab, counter=6}, lastWriteDate=Sun Nov 13 07:52:57 IST 2022, lastUpdateTimeNanos=686234431605900}
+2022-11-13 07:52:42.971  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000dd from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:52:42.971  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 5 from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:52:42.971  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:52:43.135  INFO 23480 --- [cluster-rtt-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:154, serverValue:495520}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:52:43.332  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:155, serverValue:461846}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 07:52:43.332  INFO 23480 --- [cluster-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=119713200, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f164faabdbf948df53e9, counter=4}, lastWriteDate=Sun Nov 13 07:52:57 IST 2022, lastUpdateTimeNanos=686234794038900}
+2022-11-13 07:52:43.877  INFO 23480 --- [cluster-rtt-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:156, serverValue:461845}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:08.886  INFO 16636 --- [main] c.e.demo.BookManagement1Application      : Starting BookManagement1Application using Java 17.0.1 on LAPTOP-KQU7CN9I with PID 16636 (C:\Users\Chinmay\eclipse-workspace\BookManagement-1\target\classes started by Chinmay in C:\Users\Chinmay\eclipse-workspace\BookManagement-1)
+2022-11-13 07:53:08.890  INFO 16636 --- [main] c.e.demo.BookManagement1Application      : No active profile set, falling back to 1 default profile: "default"
+2022-11-13 07:53:09.465  INFO 16636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-13 07:53:09.518  INFO 16636 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 2 MongoDB repository interfaces.
+2022-11-13 07:53:09.971  INFO 16636 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-13 07:53:09.984  INFO 16636 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-13 07:53:09.985  INFO 16636 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-13 07:53:10.097  INFO 16636 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-13 07:53:10.098  INFO 16636 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1161 ms
+2022-11-13 07:53:10.392  INFO 16636 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.1+12"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@dab1f89]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.r0sdgoq.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-izkpdz-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-11-13 07:53:10.486  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:53:10.511  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:53:10.512  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:53:10.968  INFO 16636 --- [cluster-rtt-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:459858}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:10.968  INFO 16636 --- [cluster-rtt-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:461853}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:11.059  INFO 16636 --- [cluster-rtt-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:495403}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:11.059  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:461853}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:11.059  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:459858}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:11.060  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:495522}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:11.060  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=339365600, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f3b8cf81263c7193d95b, counter=3}, lastWriteDate=Sun Nov 13 07:53:25 IST 2022, lastUpdateTimeNanos=686262521131600}
+2022-11-13 07:53:11.060  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=340263700, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000dd, setVersion=5, topologyVersion=TopologyVersion{processId=6360f28de512af9004dd2eab, counter=6}, lastWriteDate=Sun Nov 13 07:53:25 IST 2022, lastUpdateTimeNanos=686262521749600}
+2022-11-13 07:53:11.060  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=339476600, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f164faabdbf948df53e9, counter=4}, lastWriteDate=Sun Nov 13 07:53:25 IST 2022, lastUpdateTimeNanos=686262520874800}
+2022-11-13 07:53:11.064  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000dd from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:11.065  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 5 from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:11.065  INFO 16636 --- [cluster-ClusterId{value='6370550e5032be4cec675f20', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:53:11.070  WARN 16636 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2022-11-13 07:53:11.304  INFO 16636 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-13 07:53:11.315  INFO 16636 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-11-13 07:53:11.336 ERROR 16636 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2022-11-13 07:54:36.567  INFO 22152 --- [main] c.e.demo.BookManagement1Application      : Starting BookManagement1Application using Java 17.0.1 on LAPTOP-KQU7CN9I with PID 22152 (C:\Users\Chinmay\eclipse-workspace\BookManagement-1\target\classes started by Chinmay in C:\Users\Chinmay\eclipse-workspace\BookManagement-1)
+2022-11-13 07:54:36.569  INFO 22152 --- [main] c.e.demo.BookManagement1Application      : No active profile set, falling back to 1 default profile: "default"
+2022-11-13 07:54:37.116  INFO 22152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-13 07:54:37.175  INFO 22152 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 2 MongoDB repository interfaces.
+2022-11-13 07:54:37.617  INFO 22152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-13 07:54:37.625  INFO 22152 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-13 07:54:37.626  INFO 22152 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-13 07:54:37.709  INFO 22152 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-13 07:54:37.710  INFO 22152 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1094 ms
+2022-11-13 07:54:38.020  INFO 22152 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.1+12"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@10b4e7f8]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.r0sdgoq.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-izkpdz-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-11-13 07:54:38.184  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:54:38.205  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:54:38.206  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 07:54:38.660  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:495364}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.660  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:459888}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.660  INFO 22152 --- [cluster-rtt-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:459888}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.660  INFO 22152 --- [cluster-rtt-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:461875}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.660  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:461879}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.660  INFO 22152 --- [cluster-rtt-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:495470}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.662  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=245363400, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f164faabdbf948df53e9, counter=4}, lastWriteDate=Sun Nov 13 07:54:53 IST 2022, lastUpdateTimeNanos=686350121359000}
+2022-11-13 07:54:38.662  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=244375000, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000dd, setVersion=5, topologyVersion=TopologyVersion{processId=6360f28de512af9004dd2eab, counter=6}, lastWriteDate=Sun Nov 13 07:54:53 IST 2022, lastUpdateTimeNanos=686350121358900}
+2022-11-13 07:54:38.662  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=245363100, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f3b8cf81263c7193d95b, counter=3}, lastWriteDate=Sun Nov 13 07:54:53 IST 2022, lastUpdateTimeNanos=686350121359000}
+2022-11-13 07:54:38.666  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000dd from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.666  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 5 from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.666  INFO 22152 --- [cluster-ClusterId{value='63705565245a1616d49b0355', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:54:38.680  INFO 22152 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-13 07:54:38.689  INFO 22152 --- [main] c.e.demo.BookManagement1Application      : Started BookManagement1Application in 2.526 seconds (JVM running for 3.267)
+2022-11-13 07:54:50.398  INFO 22152 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-13 07:54:50.398  INFO 22152 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-13 07:54:50.399  INFO 22152 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-11-13 07:55:25.280  INFO 22152 --- [http-nio-8081-exec-5] c.e.demo.controller.BookController       : in showBooks method
+2022-11-13 07:55:25.280  INFO 22152 --- [http-nio-8081-exec-5] com.example.demo.service.BookService     : in getBooks method
+2022-11-13 07:55:25.721  INFO 22152 --- [http-nio-8081-exec-5] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:495589}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 07:59:44.576  INFO 22152 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-13 07:59:44.585  INFO 22152 --- [RMI TCP Connection(7)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-13 07:59:44.586  INFO 22152 --- [RMI TCP Connection(7)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-13 10:38:26.707  INFO 23480 --- [cluster-rtt-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:158, serverValue:498422}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 10:38:26.707  INFO 23480 --- [cluster-rtt-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:157, serverValue:462700}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 10:38:27.452  INFO 23480 --- [cluster-rtt-ClusterId{value='637053da8dae244c4314180d', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:159, serverValue:464699}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 10:38:31.491  INFO 23480 --- [RMI TCP Connection(146)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-13 10:38:31.546  INFO 23480 --- [RMI TCP Connection(146)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-13 13:05:11.549  INFO 22724 --- [main] c.e.demo.BookManagement1Application      : Starting BookManagement1Application using Java 17.0.1 on LAPTOP-KQU7CN9I with PID 22724 (C:\Users\Chinmay\eclipse-workspace\BookManagement-1\target\classes started by Chinmay in C:\Users\Chinmay\eclipse-workspace\BookManagement-1)
+2022-11-13 13:05:11.554  INFO 22724 --- [main] c.e.demo.BookManagement1Application      : No active profile set, falling back to 1 default profile: "default"
+2022-11-13 13:05:12.401  INFO 22724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-13 13:05:12.458  INFO 22724 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 MongoDB repository interfaces.
+2022-11-13 13:05:12.956  INFO 22724 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-13 13:05:12.968  INFO 22724 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-13 13:05:12.968  INFO 22724 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-13 13:05:13.095  INFO 22724 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-13 13:05:13.095  INFO 22724 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1476 ms
+2022-11-13 13:05:13.508  INFO 22724 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.1+12"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@630bf683]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.r0sdgoq.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-izkpdz-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-11-13 13:05:13.657  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 13:05:13.690  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 13:05:13.692  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 13:05:14.382  INFO 22724 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-13 13:05:14.400  INFO 22724 --- [main] c.e.demo.BookManagement1Application      : Started BookManagement1Application in 3.438 seconds (JVM running for 4.474)
+2022-11-13 13:05:14.511  INFO 22724 --- [cluster-rtt-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:465268}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:14.511  INFO 22724 --- [cluster-rtt-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:501239}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:14.511  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:465267}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:14.511  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:501258}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:14.511  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:467267}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:14.511  INFO 22724 --- [cluster-rtt-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:467267}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:14.512  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=347788000, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f3b8cf81263c7193d95b, counter=3}, lastWriteDate=Sun Nov 13 13:05:29 IST 2022, lastUpdateTimeNanos=704985970892200}
+2022-11-13 13:05:14.512  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=347850500, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000dd, setVersion=5, topologyVersion=TopologyVersion{processId=6360f28de512af9004dd2eab, counter=6}, lastWriteDate=Sun Nov 13 13:05:29 IST 2022, lastUpdateTimeNanos=704985970892200}
+2022-11-13 13:05:14.512  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=347850900, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f164faabdbf948df53e9, counter=4}, lastWriteDate=Sun Nov 13 13:05:29 IST 2022, lastUpdateTimeNanos=704985970892200}
+2022-11-13 13:05:14.516  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000dd from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:14.517  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 5 from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:14.517  INFO 22724 --- [cluster-ClusterId{value='63709e3112f2646d648851ae', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:05:30.501  INFO 22724 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-13 13:05:30.502  INFO 22724 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-13 13:05:30.505  INFO 22724 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-13 13:05:30.539  INFO 22724 --- [http-nio-8081-exec-2] c.e.demo.controller.BookController       : in showBooks method
+2022-11-13 13:05:30.540  INFO 22724 --- [http-nio-8081-exec-2] com.example.demo.service.BookService     : in getBooks method
+2022-11-13 13:05:31.467  INFO 22724 --- [http-nio-8081-exec-2] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:501105}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:06:59.164  INFO 22724 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-13 13:06:59.179  INFO 22724 --- [RMI TCP Connection(4)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-13 13:06:59.180  INFO 22724 --- [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-13 13:50:21.566  INFO 25252 --- [main] c.e.demo.BookManagement1Application      : Starting BookManagement1Application using Java 17.0.1 on LAPTOP-KQU7CN9I with PID 25252 (C:\Users\Chinmay\eclipse-workspace\BookManagement-1\target\classes started by Chinmay in C:\Users\Chinmay\eclipse-workspace\BookManagement-1)
+2022-11-13 13:50:21.571  INFO 25252 --- [main] c.e.demo.BookManagement1Application      : No active profile set, falling back to 1 default profile: "default"
+2022-11-13 13:50:22.350  INFO 25252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-13 13:50:22.419  INFO 25252 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 2 MongoDB repository interfaces.
+2022-11-13 13:50:23.031  INFO 25252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-13 13:50:23.047  INFO 25252 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-13 13:50:23.047  INFO 25252 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-13 13:50:23.210  INFO 25252 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-13 13:50:23.211  INFO 25252 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1563 ms
+2022-11-13 13:50:23.632  INFO 25252 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.1+12"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@6e60f18]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.r0sdgoq.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-izkpdz-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-11-13 13:50:23.778  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 13:50:23.808  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 13:50:23.810  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 13:50:24.466  INFO 25252 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-13 13:50:24.478  INFO 25252 --- [main] c.e.demo.BookManagement1Application      : Started BookManagement1Application in 3.477 seconds (JVM running for 4.562)
+2022-11-13 13:50:24.968  INFO 25252 --- [cluster-rtt-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:502497}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:24.968  INFO 25252 --- [cluster-rtt-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:468352}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:24.968  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:466361}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:24.968  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:468352}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:24.968  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:502497}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:24.968  INFO 25252 --- [cluster-rtt-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:466361}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:24.969  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=476857900, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f164faabdbf948df53e9, counter=4}, lastWriteDate=Sun Nov 13 13:50:39 IST 2022, lastUpdateTimeNanos=707696427690700}
+2022-11-13 13:50:24.969  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=476722300, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000dd, setVersion=5, topologyVersion=TopologyVersion{processId=6360f28de512af9004dd2eab, counter=6}, lastWriteDate=Sun Nov 13 13:50:39 IST 2022, lastUpdateTimeNanos=707696427697800}
+2022-11-13 13:50:24.969  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=477068000, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f3b8cf81263c7193d95b, counter=3}, lastWriteDate=Sun Nov 13 13:50:39 IST 2022, lastUpdateTimeNanos=707696427690800}
+2022-11-13 13:50:24.974  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000dd from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:24.974  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 5 from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:24.974  INFO 25252 --- [cluster-ClusterId{value='6370a8c7891ae31203c32c31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:50:57.746  INFO 25252 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-13 13:50:57.747  INFO 25252 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-13 13:50:57.750  INFO 25252 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-11-13 13:50:57.924  INFO 25252 --- [http-nio-8081-exec-2] c.e.demo.controller.BookController       : in createBook method
+2022-11-13 13:50:57.924  INFO 25252 --- [http-nio-8081-exec-2] com.example.demo.service.BookService     : in addBook method
+2022-11-13 13:50:57.935 ERROR 25252 --- [http-nio-8081-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException: Cannot invoke "String.isEmpty()" because the return value of "com.example.demo.model.Book.getBookName()" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "String.isEmpty()" because the return value of "com.example.demo.model.Book.getBookName()" is null
+	at com.example.demo.service.BookService.addBook(BookService.java:33) ~[classes/:na]
+	at com.example.demo.controller.BookController.createBook(BookController.java:39) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1071) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:964) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:696) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.23.jar:5.3.23]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:779) ~[tomcat-embed-core-9.0.68.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.23.jar:5.3.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1789) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.68.jar:9.0.68]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2022-11-13 13:51:02.708  INFO 25252 --- [http-nio-8081-exec-4] c.e.demo.controller.BookController       : in showBooks method
+2022-11-13 13:51:02.709  INFO 25252 --- [http-nio-8081-exec-4] com.example.demo.service.BookService     : in getBooks method
+2022-11-13 13:51:03.502  INFO 25252 --- [http-nio-8081-exec-4] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:502459}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 13:51:53.597  INFO 25252 --- [http-nio-8081-exec-5] c.e.demo.controller.BookController       : in showBooks method
+2022-11-13 13:51:53.598  INFO 25252 --- [http-nio-8081-exec-5] com.example.demo.service.BookService     : in getBooks method
+2022-11-13 13:57:43.511  INFO 25252 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-13 13:57:43.527  INFO 25252 --- [RMI TCP Connection(11)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-13 13:57:43.529  INFO 25252 --- [RMI TCP Connection(11)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-13 19:32:34.609  INFO 4736 --- [main] c.e.demo.BookManagement1Application      : Starting BookManagement1Application using Java 17.0.1 on LAPTOP-KQU7CN9I with PID 4736 (C:\Users\Chinmay\eclipse-workspace\BookManagement-1\target\classes started by Chinmay in C:\Users\Chinmay\eclipse-workspace\BookManagement-1)
+2022-11-13 19:32:34.612  INFO 4736 --- [main] c.e.demo.BookManagement1Application      : No active profile set, falling back to 1 default profile: "default"
+2022-11-13 19:32:35.429  INFO 4736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-13 19:32:35.493  INFO 4736 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 2 MongoDB repository interfaces.
+2022-11-13 19:32:36.076  INFO 4736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-13 19:32:36.092  INFO 4736 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-13 19:32:36.092  INFO 4736 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-13 19:32:36.285  INFO 4736 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-13 19:32:36.286  INFO 4736 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1618 ms
+2022-11-13 19:32:36.687  INFO 4736 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.1+12"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@5cf8676a]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.r0sdgoq.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-izkpdz-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-11-13 19:32:36.843  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 19:32:36.872  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 19:32:36.873  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 19:32:37.537  INFO 4736 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-13 19:32:37.548  INFO 4736 --- [main] c.e.demo.BookManagement1Application      : Started BookManagement1Application in 3.437 seconds (JVM running for 5.601)
+2022-11-13 19:32:37.927  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:510328}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:32:37.927  INFO 4736 --- [cluster-rtt-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:475564}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 19:32:37.927  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:475564}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 19:32:37.927  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:473523}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 19:32:37.928  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=475139200, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000dd, setVersion=5, topologyVersion=TopologyVersion{processId=6360f28de512af9004dd2eab, counter=6}, lastWriteDate=Sun Nov 13 19:32:37 IST 2022, lastUpdateTimeNanos=728214176230200}
+2022-11-13 19:32:37.929  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=475812800, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f164faabdbf948df53e9, counter=4}, lastWriteDate=Sun Nov 13 19:32:37 IST 2022, lastUpdateTimeNanos=728214176447100}
+2022-11-13 19:32:37.927  INFO 4736 --- [cluster-rtt-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:473517}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 19:32:37.927  INFO 4736 --- [cluster-rtt-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:510328}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:32:37.929  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=475804100, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f3b8cf81263c7193d95b, counter=3}, lastWriteDate=Sun Nov 13 19:32:37 IST 2022, lastUpdateTimeNanos=728214176438400}
+2022-11-13 19:32:37.935  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000dd from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:32:37.936  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 5 from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:32:37.936  INFO 4736 --- [cluster-ClusterId{value='6370f8fc6617ab19503a6d31', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:33:47.031  INFO 4736 --- [http-nio-8081-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-13 19:33:47.032  INFO 4736 --- [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-13 19:33:47.033  INFO 4736 --- [http-nio-8081-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-13 19:33:47.087  INFO 4736 --- [http-nio-8081-exec-4] com.example.demo.service.BookService     : in getBookById method
+2022-11-13 19:33:47.868  INFO 4736 --- [http-nio-8081-exec-4] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:510175}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:36:54.231  INFO 4736 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-13 19:36:54.246  INFO 4736 --- [RMI TCP Connection(8)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-13 19:36:54.248  INFO 4736 --- [RMI TCP Connection(8)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-13 19:37:17.708  INFO 25960 --- [main] c.e.demo.BookManagement1Application      : Starting BookManagement1Application using Java 17.0.1 on LAPTOP-KQU7CN9I with PID 25960 (C:\Users\Chinmay\eclipse-workspace\BookManagement-1\target\classes started by Chinmay in C:\Users\Chinmay\eclipse-workspace\BookManagement-1)
+2022-11-13 19:37:17.712  INFO 25960 --- [main] c.e.demo.BookManagement1Application      : No active profile set, falling back to 1 default profile: "default"
+2022-11-13 19:37:18.368  INFO 25960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-11-13 19:37:18.426  INFO 25960 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 2 MongoDB repository interfaces.
+2022-11-13 19:37:18.930  INFO 25960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-11-13 19:37:18.942  INFO 25960 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-13 19:37:18.943  INFO 25960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-13 19:37:19.065  INFO 25960 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-13 19:37:19.067  INFO 25960 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1297 ms
+2022-11-13 19:37:19.476  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 19:37:19.481  INFO 25960 --- [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "4.6.1"}, "os": {"type": "Windows", "name": "Windows 10", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Eclipse Adoptium/17.0.1+12"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='admin', source='admin', password=<hidden>, mechanismProperties=<hidden>}, streamFactoryFactory=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.Jep395RecordCodecProvider@60df7989]}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.r0sdgoq.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-izkpdz-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='30000 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, sendBufferSize=0}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, sendBufferSize=0}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, contextProvider=null}
+2022-11-13 19:37:19.505  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 19:37:19.506  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-srv-cluster0.r0sdgoq.mongodb.net] org.mongodb.driver.cluster               : Adding discovered server ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017 to client view of cluster
+2022-11-13 19:37:20.262  INFO 25960 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-11-13 19:37:20.274  INFO 25960 --- [main] c.e.demo.BookManagement1Application      : Started BookManagement1Application in 3.077 seconds (JVM running for 4.246)
+2022-11-13 19:37:20.288  INFO 25960 --- [cluster-rtt-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:473615}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:20.288  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:510273}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:20.288  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:473615}] to ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:20.288  INFO 25960 --- [cluster-rtt-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:475647}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:20.288  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:475652}] to ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:20.288  INFO 25960 --- [cluster-rtt-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:510371}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:20.289  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=417756900, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f164faabdbf948df53e9, counter=4}, lastWriteDate=Sun Nov 13 19:37:20 IST 2022, lastUpdateTimeNanos=728496537981400}
+2022-11-13 19:37:20.289  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=417846600, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=5, topologyVersion=TopologyVersion{processId=6360f3b8cf81263c7193d95b, counter=3}, lastWriteDate=Sun Nov 13 19:37:20 IST 2022, lastUpdateTimeNanos=728496537981300}
+2022-11-13 19:37:20.289  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=417847100, setName='atlas-izkpdz-shard-0', canonicalAddress=ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017, hosts=[ac-ssqu1f3-shard-00-01.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-00.r0sdgoq.mongodb.net:27017, ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017], passives=[], arbiters=[], primary='ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000dd, setVersion=5, topologyVersion=TopologyVersion{processId=6360f28de512af9004dd2eab, counter=6}, lastWriteDate=Sun Nov 13 19:37:20 IST 2022, lastUpdateTimeNanos=728496537981500}
+2022-11-13 19:37:20.293  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000dd from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:20.294  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 5 from replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:20.294  INFO 25960 --- [cluster-ClusterId{value='6370fa17d4983a605fd8fec5', description='null'}-ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:30.010  INFO 25960 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-13 19:37:30.011  INFO 25960 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-13 19:37:30.013  INFO 25960 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-13 19:37:30.074  INFO 25960 --- [http-nio-8081-exec-1] com.example.demo.service.BookService     : in getBookById method
+2022-11-13 19:37:30.825  INFO 25960 --- [http-nio-8081-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:510197}] to ac-ssqu1f3-shard-00-02.r0sdgoq.mongodb.net:27017
+2022-11-13 19:37:54.255  INFO 25960 --- [http-nio-8081-exec-3] c.e.demo.controller.BookController       : in showBookbyId method
+2022-11-13 19:37:54.256  INFO 25960 --- [http-nio-8081-exec-3] com.example.demo.service.BookService     : in getBookById method
+2022-11-13 19:41:51.864  INFO 25960 --- [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-13 19:41:51.885  INFO 25960 --- [RMI TCP Connection(8)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-13 19:41:51.887  INFO 25960 --- [RMI TCP Connection(8)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
