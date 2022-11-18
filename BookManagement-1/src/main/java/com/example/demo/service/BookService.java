@@ -3,7 +3,9 @@ package com.example.demo.service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import org.apache.kafka.clients.producer.KafkaProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,29 +13,44 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.data.domain.Page;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.custom.exception.BusinessException;
 import com.example.demo.custom.exception.EmptyInputException;
 import com.example.demo.model.Book;
+import com.example.demo.model.BookES;
 import com.example.demo.model.DbSequence;
 import com.example.demo.model.LibraryBook;
 import com.example.demo.repository.BookRepository;
+import com.example.demo.repository.BookRepositoryES;
 import com.example.demo.repository.IdRepository;
+
+
 
 
 
 @Service
 @EnableCaching
 public class BookService {
+	
+	
 
 	Logger logger = LoggerFactory.getLogger(BookService.class);
+	
+	
+
+	@Value("${library.url}")
+	String uri;
 
 	@Autowired
 	private BookRepository repo;
 	@Autowired
 	private IdRepository idrepo;
+	@Autowired
+	private BookRepositoryES repoES;
 
 	public Book addBook(Book book) {
 		logger.info("in addBook method");
@@ -55,6 +72,30 @@ public class BookService {
 			throw new BusinessException("603", "Something went wrong in the service layer : " + e.getMessage());
 		}
 	}
+	
+	public BookES addBookES(BookES bookES) {
+//		logger.info("in addBookES method");
+//		if (bookES.getBookName().isEmpty() || bookES.getBookName().length() == 0) {
+//			throw new EmptyInputException("601", "Please Send proper name,it is blank");
+//		}
+//		try {
+//			DbSequence dbs = idrepo.findById("id").get();
+//			int old_id = dbs.getSeq();
+//			dbs.setSeq(old_id);
+//			idrepo.save(dbs);
+//			bookES.setBookId("DSCE-" + (old_id));
+//			return repoES.save(bookES);
+//		}
+//		
+		return repoES.save(bookES);
+		
+		// null object passed
+//		catch (IllegalArgumentException e) {
+//			throw new BusinessException("602", "the given info about book is null : " + e.getMessage());
+//		} catch (Exception e) {
+//			throw new BusinessException("603", "Something went wrong in the service layer : " + e.getMessage());
+//		}
+	}
 
 	public List<Book> getBooks() {
 		logger.info("in getBooks method");
@@ -65,8 +106,21 @@ public class BookService {
 			}
 			return repo.findAll();
 		} catch (Exception e) {
-			throw new BusinessException("605",
-					"Something went wrong in the service layer while fetching all employees : " + e.getMessage());
+			throw new BusinessException("605","Something went wrong in the service layer while fetching all employees : " + e.getMessage());
+		}
+
+	}
+	
+	public Page<BookES> getBooksES() {
+		logger.info("in getBooksES method");
+		try {
+			Page<BookES> bookES =  (Page<BookES>) repoES.findAll();
+			if (bookES.isEmpty()) {
+				throw new BusinessException("604", "There are no books available");
+			}
+			return (Page<BookES>) repoES.findAll();
+		} catch (Exception e) {
+			throw new BusinessException("605","Something went wrong in the service layer while fetching all employees : " + e.getMessage());
 		}
 
 	}
@@ -136,11 +190,40 @@ public class BookService {
 
 	public LibraryBook getBookCategory(String bookId) {
 		// TODO Auto-generated method stub
-		@Value("${library.url}")
-		String uri="http://localhost:8082/library/"+bookId;
+		
+		String uri = "http://localhost:8082/library/";
         RestTemplate restTemplate = new RestTemplate();
-        LibraryBook book = restTemplate.getForObject(uri,LibraryBook.class);
+        LibraryBook book = restTemplate.getForObject(uri+bookId,LibraryBook.class);
         return book;
+	}
+
+	public Optional<BookES> getBookByIdES(String bookId) {
+		logger.info("in getBookByIdES method");
+		try {
+			return repoES.findBybookId(bookId);
+		} catch (IllegalArgumentException e) {
+			throw new BusinessException("606", "The given id id null,please enter the id");
+		}
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List<BookES> getBookByNameES(String bookName) {
+		// TODO Auto-generated method stub
+		logger.info("in getBookByName method");
+		try {
+			// return repo.findByBookName(bname);
+			List<BookES> books =  repoES.findByBookName(bookName);
+			if (books.size() == 0) {
+				throw new BusinessException("607", "The given bookname does not exist in the database");
+			} else {
+				return books;
+			}
+
+		} catch (IllegalArgumentException e) {
+			throw new BusinessException("608", "The given bookname is null,please enter the bookname");
+		}
+
 	}
 
 //	//new code written on 28/10

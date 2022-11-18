@@ -3,19 +3,26 @@ package com.example.demo.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Document(indexName="cgd")
+@Document(indexName="my-application")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class BookES {
+@JsonSerialize
+public class BookES{
+	@Override
+	public String toString() {
+		return "BookES [bookId=" + bookId + ", bookName=" + bookName + ", description=" + description + "]";
+	}
 	@Id
 	private String bookId;
 	private String bookName;
@@ -40,4 +47,5 @@ public class BookES {
 		this.bookId = bookId;
 	}
 
+	
 }
